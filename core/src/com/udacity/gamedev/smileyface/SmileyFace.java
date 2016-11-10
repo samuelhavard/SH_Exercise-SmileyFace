@@ -2,6 +2,7 @@ package com.udacity.gamedev.smileyface;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
@@ -95,19 +96,20 @@ public class SmileyFace extends ApplicationAdapter {
     private void drawSmileyFace(ShapeRenderer renderer) {
 
         // TODO: Set the color to yellow, and draw the face
-
-
+        renderer.setColor(Color.YELLOW);
+        renderer.circle(FACE_CENTER_X, FACE_CENTER_Y, FACE_RADIUS, FACE_SEGMENTS);
 
         // TODO: Set the color to black and draw the eyes
-
-
-
+        renderer.setColor(Color.BLACK);
+        renderer.circle(FACE_CENTER_X - EYE_OFFSET, FACE_CENTER_Y + EYE_OFFSET, EYE_RADIUS, EYE_SEGMENTS);
+        renderer.circle(FACE_CENTER_X + EYE_OFFSET, FACE_CENTER_Y + EYE_OFFSET, EYE_RADIUS, EYE_SEGMENTS);
 
         // TODO: Draw a black arc for the mouth (Hint: MOUTH_OUTER_RADIUS)
-
+        renderer.arc(FACE_CENTER_X, FACE_CENTER_Y, MOUTH_OUTER_RADIUS, MOUTH_START_ANGLE, MOUTH_DEGREES, MOUTH_SEGMENTS);
 
         // TODO: Draw a yellow arc to make the mouth actually look like a mouth (Hint: MOUTH_INNER_RADIUS)
-
+        renderer.setColor(Color.YELLOW);
+        renderer.arc(FACE_CENTER_X, FACE_CENTER_Y, MOUTH_INNER_RADIUS, MOUTH_START_ANGLE, MOUTH_DEGREES, MOUTH_SEGMENTS);
 
     }
 }
