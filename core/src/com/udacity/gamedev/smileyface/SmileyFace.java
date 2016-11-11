@@ -90,7 +90,6 @@ public class SmileyFace extends ApplicationAdapter {
 
         // TODO: End the batch
         renderer.end();
-
     }
 
     private void drawSmileyFace(ShapeRenderer renderer) {
